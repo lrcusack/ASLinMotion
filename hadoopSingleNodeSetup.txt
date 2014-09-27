@@ -10,3 +10,7 @@ sudo apt-get install ssh
 sudo service ssh start
 //then you may continue with the ssh directions
 
+//when installing hadoop
+sudo tar xzf hadoop-2.5.1.tar.gz //instead of his directions because we have a latter version
+sudo mv hadoop-2.5.1 hadoop //instead of his directions because we have a latter version
+
