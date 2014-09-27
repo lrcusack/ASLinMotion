@@ -26,3 +26,9 @@ export JAVA_HOME=/usr/lib/jvm/jdk/
 
 // you may continue following the sites directions
 
+//ok so once again their file structure is outdated so ignore editing conf/core-site.xml (because it doesn't exist) and instead do the line i provide below
+
+sudo gedit /usr/local/hadoop/etc/hadoop/core-site.xml //and then do the modifications that he asks of you from that file
+
+
+
