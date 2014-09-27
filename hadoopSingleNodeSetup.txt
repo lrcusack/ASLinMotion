@@ -1,0 +1,5 @@
+Ubuntu single node Hadoop setup
+
+http://www.michael-noll.com/tutorials/running-hadoop-on-ubuntu-linux-single-node-cluster/
+
+hduser password is hadoop
