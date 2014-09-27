@@ -2,4 +2,27 @@ Ubuntu single node Hadoop setup
 
 http://www.michael-noll.com/tutorials/running-hadoop-on-ubuntu-linux-single-node-cluster/
 
-hduser password is hadoop
+Beshoi password hduser: hadoop
+Robbie password hduser: Rockydog1!
+//do this before going to the ssh
+sudo apt-get install ssh
+
+sudo service ssh start
+//then you may continue with the ssh directions
+
+//when installing hadoop
+sudo tar xzf hadoop-2.5.1.tar.gz //instead of his directions because we have a latter version
+sudo mv hadoop-2.5.1 hadoop //instead of his directions because we have a latter version
+
+//after you already installed hadoop on your computer and have went to $HOME/.bashrc makes sure to reboot the computer to ensure no corruption
+
+//note when editing hadoop-env.sh their directions are outdated so follow the ones i provide below
+
+sudo gedit /usr/local/hadoop/etc/hadoop/hadoop-env.sh
+//you will find something similar to the lines I provide below simply make it look like the line of code i provide
+
+#modify JAVA_HOME
+export JAVA_HOME=/usr/lib/jvm/jdk/
+
+// you may continue following the sites directions
+
