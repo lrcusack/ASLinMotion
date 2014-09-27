@@ -2,7 +2,8 @@ Ubuntu single node Hadoop setup
 
 http://www.michael-noll.com/tutorials/running-hadoop-on-ubuntu-linux-single-node-cluster/
 
-hduser password is hadoop
+Beshoi password hduser: hadoop
+Robbie password hduser: Rockydog1!
 //do this before going to the ssh
 sudo apt-get install ssh
 
