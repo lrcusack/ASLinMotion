@@ -1,0 +1,1037 @@
+
+
+  
+  
+ 
+  
+  
+ 
+
+
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Hand &mdash; Leap Motion Objective-C SDK v1.2 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-3.0.0/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/breathe.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-3.0.0/css/bootstrap-theme.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-3.0.0/css/font-awesome.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.2',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  false
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../_static/js/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-3.0.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-3.0.0/css/font-awesome.min.css"></script>
+    <script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
+    <link rel="top" title="Leap Motion Objective-C SDK v1.2 documentation" href="../index.html" />
+    <link rel="up" title="API Reference" href="Leap_Classes.html" />
+    <link rel="next" title="InteractionBox" href="Leap.InteractionBox.html" />
+    <link rel="prev" title="Gesture" href="Leap.Gesture.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-31536531-1']);
+  _gaq.push(['_setDomainName', 'leapmotion.com']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+
+
+
+
+
+
+ 
+
+<script>
+
+    function getQueryValue(variable)
+    {
+        var query = window.location.search.substring(1);
+        var vars = query.split("&");
+        for (var i=0;i<vars.length;i++) {
+            var pair = vars[i].split("=");
+            if(pair[0] == variable){return pair[1];}
+        }
+        return(false);
+    }
+
+    var requestedAPI = getQueryValue("proglang");
+    if(requestedAPI == "current") requestedAPI = localStorage["currentAPI"];
+    var pageAPI = 'objc';
+    var hasAPI = {};
+    hasAPI.cpp = true;
+    hasAPI.csharp = true;
+    hasAPI.objc = true;
+    hasAPI.java = true;
+    hasAPI.javascript = true;
+    hasAPI.python = true;
+
+    if(requestedAPI && (requestedAPI != pageAPI))
+    {
+        if(pageAPI != 'none'){
+            var redirectedLocation = '../../objc/api/Leap.Hand.html';
+            if( requestedAPI == 'cpp' && hasAPI.cpp){
+                redirectedLocation = "../../cpp/api/Leap.Hand.html";
+            }
+            else if( requestedAPI == 'csharp' && hasAPI.csharp){
+                redirectedLocation = "../../csharp/api/Leap.Hand.html";
+            }
+            else if( requestedAPI == 'objc' && hasAPI.objc){
+                redirectedLocation = "../../objc/api/Leap.Hand.html";
+            }
+            else if( requestedAPI == 'java' && hasAPI.java) {
+                redirectedLocation = "../../java/api/Leap.Hand.html";
+            }
+            else if( requestedAPI == 'javascript' && hasAPI.javascript){
+                redirectedLocation = "../../javascript/api/Leap.Hand.html";
+            }
+            else if( requestedAPI == 'python' && hasAPI.python) {
+                redirectedLocation = "../../python/api/Leap.Hand.html";
+            } else {
+                    redirectedLocation ="Leap_Classes.html";
+            }
+
+            //Guard against redirecting to the same page (infinitely)
+            if('../../objc/api/Leap.Hand.html' != redirectedLocation) window.location.replace(redirectedLocation);
+        }
+    }
+
+</script>
+
+<script>
+    window.addEventListener('keyup', handleKeyInput);
+    function handleKeyInput(e)
+    {
+        var code;
+        if (!e) var e = window.event;
+        if (e.keyCode) code = e.keyCode;
+        else if (e.which) code = e.which;
+        var character = String.fromCharCode(code);
+        if( character == "J" & e.altKey){
+            window.location.assign("Leap.Gesture.html");    }
+        else if( character == "K" & e.altKey){
+            window.location.assign("Leap.InteractionBox.html");
+        }
+        
+    }
+</script>
+<script type="text/javascript" src="/assets/standalone-header.js?r7"></script>
+<link rel="stylesheet" href="/assets/standalone-header.css?r7" type="text/css" />
+
+
+  </head>
+  <body>
+
+<div class="developer-portal-styles">
+  <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a href="https://developer.leapmotion.com/" class="logo-link pull-left">
+          <img class="media-object logo" src="../_static/logo.png" alt="Leap Motion Developer"/><span class="text">Developer</span></a>
+      </div>
+      <div class="navbar-collapse collapse">
+        <ul class="nav navbar-nav header-navigation">
+          <li class="hidden-xs hidden-sm"><a href="https://developer.leapmotion.com/downloads">SDK Download</a></li>
+
+          <li><a href="/documentation">Documentation</a></li>
+
+          <li><a href="https://developer.leapmotion.com/libraries">Examples</a></li>
+
+          <li><a href="https://developer.leapmotion.com/apps/overview">Apps</a></li>
+
+          <li><a href="https://community.leapmotion.com/category/dev">Forums</a></li>
+
+          <li><a href="http://labs.leapmotion.com" target="_blank">Blog</a></li>
+        </ul>
+      </div><!--/.nav-collapse -->
+    </div>
+  </div>
+</div>
+
+<div class="navbar navbar-default navbar-fixed-top secondary">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3">
+        <ul class="nav">
+          
+            <li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+    
+    <span>Objective-C</span>
+    
+    <b class="caret"></b></a>
+  <ul class="dropdown-menu platform">
+  
+    <li><a><strong>Choose a Language</strong></a></li>
+    <li class="divider"></li>
+    <li class="proglanglinks">
+               <a href="../../cpp/api/Leap.Hand.html" onclick="localStorage['currentAPI'] = 'cpp'" class="active">C++</a>
+           
+        
+      
+    </li>
+    <li class="proglanglinks">
+                <a href="../../csharp/api/Leap.Hand.html" onclick="localStorage['currentAPI'] = 'csharp'" class="active">C# and Unity</a>
+            
+        
+      
+    </li>
+    <li class="proglanglinks">
+            <a href="#" onclick="localStorage['currentAPI'] = 'objc'" class="active">Objective-C</a>
+        
+      
+    </li>
+    <li class="proglanglinks">
+                <a href="../../java/api/Leap.Hand.html" onclick="localStorage['currentAPI'] = 'java'" class="active">Java</a>
+            
+        
+      
+    </li>
+    <li class="proglanglinks">
+                <a href="../../javascript/api/Leap.Hand.html" onclick="localStorage['currentAPI'] = 'javascript'" class="active">JavaScript</a>
+            
+        
+      
+    </li>
+    <li class="proglanglinks">
+                <a href="../../python/api/Leap.Hand.html" onclick="localStorage['currentAPI'] = 'python'" class="active">Python</a>
+            
+        
+      
+    </li>
+  
+  </ul>
+</li>
+          
+        </ul>
+      </div>
+      <div class="col-md-9 search">
+        
+          <form class="navbar-form" action="../search.html" method="get">
+ <div class="form-group">
+  <span><i class="fa fa-search"></i></span>
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+        
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+    //Remove dev portal header and footer when viewing from file system
+    if(window.location.protocol == 'file:'){
+        var navNodes = document.querySelectorAll("div.navbar-collapse.collapse");
+        //navNodes[0].style.display = 'none';
+        navNodes[0].parentNode.removeChild(navNodes[0]);
+    }
+
+</script>
+
+
+<div id="wrap" data-spy="scroll" data-target="#sidebar">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-9 pull-right">
+        <!-- 
+ 
+<span id="breadcrumbs">
+  <a href="../index.html">Home</a>&raquo;
+    <a href="Leap_Classes.html" accesskey="U">API Reference</a>&raquo;
+  Hand
+</span> -->
+        
+  <div class="section" id="leaphand">
+<h1>LeapHand<a class="headerlink" href="#leaphand" title="Permalink to this headline">¶</a></h1>
+</div>
+<style>.members {
+     -webkit-column-count:2; /* Chrome, Safari, Opera */
+     -moz-column-count:2; /* Firefox */
+     column-count:2;
+     }
+     strong {color:gray;}
+</style><p><strong>Methods:</strong></p>
+<div class="members container">
+<ul class="simple">
+<li><a class="reference external" href="#objcinterface_leap_hand_1a7b4919a71d4937fb97acabcd83bf254e">direction</a></li>
+<li><a class="reference external" href="#objcinterface_leap_hand_1a91fb6a840465b46396bbbe332aa3baf1">finger:</a></li>
+<li><a class="reference external" href="#objcinterface_leap_hand_1a097f5f7a5f1185a363298d4dab9e9bb2">fingers</a></li>
+<li><a class="reference external" href="#objcinterface_leap_hand_1ad6bbcd65187ddd1c578d0914d8421c2b">frame</a></li>
+<li><a class="reference external" href="#objcinterface_leap_hand_1ac6dcf184ee44e021ffaf512eb614f251">id</a></li>
+<li><a class="reference external" href="#objcinterface_leap_hand_1ae885e542697ae6f9da9d527318ea6db5">invalid</a></li>
+<li><a class="reference external" href="#objcinterface_leap_hand_1aa29c0e93357b1d83c72352cc03e84ca8">isValid</a></li>
+<li><a class="reference external" href="#objcinterface_leap_hand_1aa69896a90428ad2b6d0f6f3f79102ec5">palmNormal</a></li>
+<li><a class="reference external" href="#objcinterface_leap_hand_1ab8be62e5a6ede6d4f927d2bca89f063f">palmPosition</a></li>
+<li><a class="reference external" href="#objcinterface_leap_hand_1a95d5f0bfaf1110b62a95c1b26e3a13aa">palmVelocity</a></li>
+<li><a class="reference external" href="#objcinterface_leap_hand_1a1a8cb3ce02d19fe2207d2817c842ae84">pointable:</a></li>
+<li><a class="reference external" href="#objcinterface_leap_hand_1adb6c93a66b471f7e1bcad1aad8abc4ac">pointables</a></li>
+<li><a class="reference external" href="#objcinterface_leap_hand_1ac560c2ee6e018c5cbb142f140e484194">rotationAngle:</a></li>
+<li><a class="reference external" href="#objcinterface_leap_hand_1a2148131ea9d5268d940a31bf299184fe">rotationAngle:axis:</a></li>
+<li><a class="reference external" href="#objcinterface_leap_hand_1af30685de63d73da5a119082d7fdf3935">rotationAxis:</a></li>
+<li><a class="reference external" href="#objcinterface_leap_hand_1a934111feb0c869e20dc28c16ec2694a4">rotationMatrix:</a></li>
+<li><a class="reference external" href="#objcinterface_leap_hand_1ae432a55ee291fe54f08b9ee21b569718">rotationProbability:</a></li>
+<li><a class="reference external" href="#objcinterface_leap_hand_1a951385673d102ac7a84f38bf0ebd6bc0">scaleFactor:</a></li>
+<li><a class="reference external" href="#objcinterface_leap_hand_1ad661a74300008c4a10004f42e5f0ec82">scaleProbability:</a></li>
+<li><a class="reference external" href="#objcinterface_leap_hand_1a4be98a5c886136a3fe68fb56391c8f7f">sphereCenter</a></li>
+<li><a class="reference external" href="#objcinterface_leap_hand_1aa6783674ad8d534debe4da6da52c4878">sphereRadius</a></li>
+<li><a class="reference external" href="#objcinterface_leap_hand_1a38778281b31d923d8e281facd2bf61d7">stabilizedPalmPosition</a></li>
+<li><a class="reference external" href="#objcinterface_leap_hand_1a2b95e667f0c9b2de381c5cc0fd48800c">timeVisible</a></li>
+<li><a class="reference external" href="#objcinterface_leap_hand_1a97040cf712a9e08efb40181426a00dcc">tool:</a></li>
+<li><a class="reference external" href="#objcinterface_leap_hand_1a690c1055cf4852582d4e528e5189897b">tools</a></li>
+<li><a class="reference external" href="#objcinterface_leap_hand_1a27e6452430efe67847090f8248540e5f">translation:</a></li>
+<li><a class="reference external" href="#objcinterface_leap_hand_1a30f54f7d192a3bc91f8d721a0e1354ac">translationProbability:</a></li>
+</ul>
+</div>
+<div class="line-block" id="objcinterface_leap_hand">
+<div class="line"><em>class</em> <strong>LeapHand</strong></div>
+</div>
+<blockquote>
+<div><p>The <a class="reference internal" href="#objcinterface_leap_hand"><em>LeapHand</em></a> class reports the physical characteristics of a detected hand. </p>
+<p><p>Hand tracking data includes a palm position and velocity; vectors for the palm normal and direction to the fingers; properties of a sphere fit to the hand; and lists of the attached fingers and tools.</p>
+<p>Note that <a class="reference internal" href="#objcinterface_leap_hand"><em>LeapHand</em></a> objects can be invalid, which means that they do not contain valid tracking data and do not correspond to a physical entity. Invalid <a class="reference internal" href="#objcinterface_leap_hand"><em>LeapHand</em></a> objects can be the result of asking for a Hand object using an ID from an earlier frame when no hand objects with that ID exist in the current frame. A hand object created from the <a class="reference internal" href="#objcinterface_leap_hand"><em>LeapHand</em></a> constructor is also invalid. Test for validity with the <a class="reference internal" href="#objcinterface_leap_hand"><em>LeapHand</em></a> isValid function. <dl class="docutils">
+<dt><strong>Since 1.0</strong></dt>
+<dd></dd>
+</dl>
+</p>
+</p>
+<em>Public Functions</em><blockquote>
+<div><p><span class="target" id="objcinterface_leap_hand_1a7b4919a71d4937fb97acabcd83bf254e"></span><div class="line-block">
+<div class="line"><div class="line"><br /></div>
+- (<a class="reference internal" href="Leap.Vector.html#objcinterface_leap_vector"><em>LeapVector</em></a>  *)  <strong>direction</strong></div>
+</div>
+</p>
+<blockquote>
+<div><p>The direction from the palm position toward the fingers. </p>
+<p><p>The direction is expressed as a unit vector pointing in the same direction as the directed line from the palm position to the fingers.</p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>The <a class="reference internal" href="Leap.Vector.html#objcinterface_leap_vector"><em>LeapVector</em></a> pointing from the palm position toward the fingers. </dd>
+<dt><strong>Since 1.0</strong></dt>
+<dd></dd>
+</dl>
+</p>
+</p>
+</div></blockquote>
+<p><span class="target" id="objcinterface_leap_hand_1a91fb6a840465b46396bbbe332aa3baf1"></span><div class="line-block">
+<div class="line"><div class="line"><br /></div>
+- (<a class="reference internal" href="Leap.Finger.html#objcinterface_leap_finger"><em>LeapFinger</em></a>  *) <strong>finger</strong>:(int32_t) fingerId </div>
+</div>
+</p>
+<blockquote>
+<div><p>The <a class="reference internal" href="Leap.Finger.html#objcinterface_leap_finger"><em>LeapFinger</em></a> object with the specified ID attached to this hand. </p>
+<p><p>Use this [<a class="reference internal" href="#objcinterface_leap_hand"><em>LeapHand</em></a> finger:] function to retrieve a <a class="reference internal" href="Leap.Finger.html#objcinterface_leap_finger"><em>LeapFinger</em></a> object attached to this hand using an ID value obtained from a previous frame. This function always returns a <a class="reference internal" href="Leap.Finger.html#objcinterface_leap_finger"><em>LeapFinger</em></a> object, but if no finger with the specified ID is present, an invalid <a class="reference internal" href="Leap.Finger.html#objcinterface_leap_finger"><em>LeapFinger</em></a> object is returned.</p>
+<p>Note that ID values persist across frames, but only until tracking of a particular object is lost. If tracking of a finger is lost and subsequently regained, the new <a class="reference internal" href="Leap.Finger.html#objcinterface_leap_finger"><em>LeapFinger</em></a> object representing that finger may have a different ID than that representing the finger in an earlier frame.</p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>The <a class="reference internal" href="Leap.Finger.html#objcinterface_leap_finger"><em>LeapFinger</em></a> object with the matching ID if one exists for this hand in this frame; otherwise, an invalid <a class="reference internal" href="Leap.Finger.html#objcinterface_leap_finger"><em>LeapFinger</em></a> object is returned. </dd>
+<dt><strong>Since 1.0</strong></dt>
+<dd></dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last">
+<li><tt class="first docutils literal"><span class="pre">fingerId</span></tt> - <p>The ID value of a <a class="reference internal" href="Leap.Finger.html#objcinterface_leap_finger"><em>LeapFinger</em></a> object from a previous frame. </p>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</p>
+</div></blockquote>
+<p><span class="target" id="objcinterface_leap_hand_1a097f5f7a5f1185a363298d4dab9e9bb2"></span><div class="line-block">
+<div class="line"><div class="line"><br /></div>
+- (NSArray *)  <strong>fingers</strong></div>
+</div>
+</p>
+<blockquote>
+<div><p>The list of <a class="reference internal" href="Leap.Finger.html#objcinterface_leap_finger"><em>LeapFinger</em></a> objects detected in this frame that are attached to this hand, given in arbitrary order. </p>
+<p><p>The list can be empty if no fingers attached to this hand are detected.</p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>An NSArray containing all <a class="reference internal" href="Leap.Finger.html#objcinterface_leap_finger"><em>LeapFinger</em></a> objects attached to this hand. </dd>
+<dt><strong>Since 1.0</strong></dt>
+<dd></dd>
+</dl>
+</p>
+</p>
+</div></blockquote>
+<p><span class="target" id="objcinterface_leap_hand_1ad6bbcd65187ddd1c578d0914d8421c2b"></span><div class="line-block">
+<div class="line"><div class="line"><br /></div>
+- (<a class="reference internal" href="Leap.Frame.html#objcinterface_leap_frame"><em>LeapFrame</em></a>  *)  <strong>frame</strong></div>
+</div>
+</p>
+<blockquote>
+<div><p>The <a class="reference internal" href="Leap.Frame.html#objcinterface_leap_frame"><em>LeapFrame</em></a> associated with this Hand. </p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>The associated <a class="reference internal" href="Leap.Frame.html#objcinterface_leap_frame"><em>LeapFrame</em></a> object, if available; otherwise, an invalid <a class="reference internal" href="Leap.Frame.html#objcinterface_leap_frame"><em>LeapFrame</em></a> object is returned. </dd>
+<dt><strong>Since 1.0</strong></dt>
+<dd></dd>
+</dl>
+</p>
+</div></blockquote>
+<p><span class="target" id="objcinterface_leap_hand_1ac6dcf184ee44e021ffaf512eb614f251"></span><div class="line-block">
+<div class="line"><div class="line"><br /></div>
+- (int32_t)  <strong>id</strong></div>
+</div>
+</p>
+<blockquote>
+<div><p>A unique ID assigned to this <a class="reference internal" href="#objcinterface_leap_hand"><em>LeapHand</em></a> object, whose value remains the same across consecutive frames while the tracked hand remains visible. </p>
+<p><p>If tracking is lost (for example, when a hand is occluded by another hand or when it is withdrawn from or reaches the edge of the Leap field of view), the Leap may assign a new ID when it detects the hand in a future frame.</p>
+<p>Use the ID value with the [<a class="reference internal" href="Leap.Frame.html#objcinterface_leap_frame"><em>LeapFrame</em></a> hand:] function to find this <a class="reference internal" href="#objcinterface_leap_hand"><em>LeapHand</em></a> object in future frames.</p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>The ID of this hand. </dd>
+<dt><strong>Since 1.0</strong></dt>
+<dd></dd>
+</dl>
+</p>
+</p>
+</div></blockquote>
+<p><span class="target" id="objcinterface_leap_hand_1aa29c0e93357b1d83c72352cc03e84ca8"></span><div class="line-block">
+<div class="line"><div class="line"><br /></div>
+- (BOOL)  <strong>isValid</strong></div>
+</div>
+</p>
+<blockquote>
+<div><p>Reports whether this is a valid <a class="reference internal" href="#objcinterface_leap_hand"><em>LeapHand</em></a> object. </p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>YES, if this <a class="reference internal" href="#objcinterface_leap_hand"><em>LeapHand</em></a> object contains valid tracking data. </dd>
+<dt><strong>Since 1.0</strong></dt>
+<dd></dd>
+</dl>
+</p>
+</div></blockquote>
+<p><span class="target" id="objcinterface_leap_hand_1aa69896a90428ad2b6d0f6f3f79102ec5"></span><div class="line-block">
+<div class="line"><div class="line"><br /></div>
+- (<a class="reference internal" href="Leap.Vector.html#objcinterface_leap_vector"><em>LeapVector</em></a>  *)  <strong>palmNormal</strong></div>
+</div>
+</p>
+<blockquote>
+<div><p>The normal vector to the palm. </p>
+<p><p>If your hand is flat, this vector will point downward, or &#8220;out&#8221; of the front surface of your palm.</p>
+<p><img alt="api/../../../images/Leap_Palm_Vectors.png" src="api/../../../images/Leap_Palm_Vectors.png" /></p>
+<p>The direction is expressed as a unit vector pointing in the same direction as the palm normal (that is, a vector orthogonal to the palm).</p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>The <a class="reference internal" href="Leap.Vector.html#objcinterface_leap_vector"><em>LeapVector</em></a> normal to the plane formed by the palm. </dd>
+<dt><strong>Since 1.0</strong></dt>
+<dd></dd>
+</dl>
+</p>
+</p>
+</div></blockquote>
+<p><span class="target" id="objcinterface_leap_hand_1ab8be62e5a6ede6d4f927d2bca89f063f"></span><div class="line-block">
+<div class="line"><div class="line"><br /></div>
+- (<a class="reference internal" href="Leap.Vector.html#objcinterface_leap_vector"><em>LeapVector</em></a>  *)  <strong>palmPosition</strong></div>
+</div>
+</p>
+<blockquote>
+<div><p>The center position of the palm in millimeters from the Leap origin. </p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>The <a class="reference internal" href="Leap.Vector.html#objcinterface_leap_vector"><em>LeapVector</em></a> representing the coordinates of the palm position. </dd>
+<dt><strong>Since 1.0</strong></dt>
+<dd></dd>
+</dl>
+</p>
+</div></blockquote>
+<p><span class="target" id="objcinterface_leap_hand_1a95d5f0bfaf1110b62a95c1b26e3a13aa"></span><div class="line-block">
+<div class="line"><div class="line"><br /></div>
+- (<a class="reference internal" href="Leap.Vector.html#objcinterface_leap_vector"><em>LeapVector</em></a>  *)  <strong>palmVelocity</strong></div>
+</div>
+</p>
+<blockquote>
+<div><p>The rate of change of the palm position in millimeters/second. </p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>The <a class="reference internal" href="Leap.Vector.html#objcinterface_leap_vector"><em>LeapVector</em></a> representing the coordinates of the palm velocity. </dd>
+<dt><strong>Since 1.0</strong></dt>
+<dd></dd>
+</dl>
+</p>
+</div></blockquote>
+<p><span class="target" id="objcinterface_leap_hand_1a1a8cb3ce02d19fe2207d2817c842ae84"></span><div class="line-block">
+<div class="line"><div class="line"><br /></div>
+- (<a class="reference internal" href="Leap.Pointable.html#objcinterface_leap_pointable"><em>LeapPointable</em></a>  *) <strong>pointable</strong>:(int32_t) pointableId </div>
+</div>
+</p>
+<blockquote>
+<div><p>The <a class="reference internal" href="Leap.Pointable.html#objcinterface_leap_pointable"><em>LeapPointable</em></a> object with the specified ID associated with this hand. </p>
+<p><p>Use this [<a class="reference internal" href="#objcinterface_leap_hand"><em>LeapHand</em></a> pointable:] function to retrieve a <a class="reference internal" href="Leap.Pointable.html#objcinterface_leap_pointable"><em>LeapPointable</em></a> object associated with this hand using an ID value obtained from a previous frame. This function always returns a <a class="reference internal" href="Leap.Pointable.html#objcinterface_leap_pointable"><em>LeapPointable</em></a> object, but if no finger or tool with the specified ID is present, an invalid <a class="reference internal" href="Leap.Pointable.html#objcinterface_leap_pointable"><em>LeapPointable</em></a> object is returned.</p>
+<p>Note that ID values persist across frames, but only until tracking of a particular object is lost. If tracking of a finger or tool is lost and subsequently regained, the new <a class="reference internal" href="Leap.Pointable.html#objcinterface_leap_pointable"><em>LeapPointable</em></a> object representing that finger or tool may have a different ID than that representing the finger or tool in an earlier frame.</p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>The <a class="reference internal" href="Leap.Pointable.html#objcinterface_leap_pointable"><em>LeapPointable</em></a> object with the matching ID if one exists for this hand in this frame; otherwise, an invalid <a class="reference internal" href="Leap.Pointable.html#objcinterface_leap_pointable"><em>LeapPointable</em></a> object is returned. </dd>
+<dt><strong>Since 1.0</strong></dt>
+<dd></dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last">
+<li><tt class="first docutils literal"><span class="pre">pointableId</span></tt> - <p>The ID value of a <a class="reference internal" href="Leap.Pointable.html#objcinterface_leap_pointable"><em>LeapPointable</em></a> object from a previous frame. </p>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</p>
+</div></blockquote>
+<p><span class="target" id="objcinterface_leap_hand_1adb6c93a66b471f7e1bcad1aad8abc4ac"></span><div class="line-block">
+<div class="line"><div class="line"><br /></div>
+- (NSArray *)  <strong>pointables</strong></div>
+</div>
+</p>
+<blockquote>
+<div><p>The list of <a class="reference internal" href="Leap.Pointable.html#objcinterface_leap_pointable"><em>LeapPointable</em></a> objects (fingers and tools) detected in this frame that are associated with this hand, given in arbitrary order. </p>
+<p><p>The list can be empty if no fingers or tools associated with this hand are detected.</p>
+<p>Use the [<a class="reference internal" href="Leap.Pointable.html#objcinterface_leap_pointable"><em>LeapPointable</em></a> isFinger] function to determine whether or not an item in the list represents a finger. Use the [<a class="reference internal" href="Leap.Pointable.html#objcinterface_leap_pointable"><em>LeapPointable</em></a> isTool] function to determine whether or not an item in the list represents a tool. You can also get only fingers using the [<a class="reference internal" href="#objcinterface_leap_hand"><em>LeapHand</em></a> fingers] function or only tools using the [<a class="reference internal" href="#objcinterface_leap_hand"><em>LeapHand</em></a> tools] function.</p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>An NSArray containing all <a class="reference internal" href="Leap.Pointable.html#objcinterface_leap_pointable"><em>LeapPointable</em></a> objects associated with this hand. </dd>
+<dt><strong>Since 1.0</strong></dt>
+<dd></dd>
+</dl>
+</p>
+</p>
+</div></blockquote>
+<p><span class="target" id="objcinterface_leap_hand_1ac560c2ee6e018c5cbb142f140e484194"></span><div class="line-block">
+<div class="line"><div class="line"><br /></div>
+- (float) <strong>rotationAngle</strong>:(const  <a class="reference internal" href="Leap.Frame.html#objcinterface_leap_frame"><em>LeapFrame</em></a>  *) sinceFrame </div>
+</div>
+</p>
+<blockquote>
+<div><p>The angle of rotation around the rotation axis derived from the change in orientation of this hand, and any associated fingers and tools, between the current <a class="reference internal" href="Leap.Frame.html#objcinterface_leap_frame"><em>LeapFrame</em></a> and the specified <a class="reference internal" href="Leap.Frame.html#objcinterface_leap_frame"><em>LeapFrame</em></a>. </p>
+<p><p>The returned angle is expressed in radians measured clockwise around the rotation axis (using the right-hand rule) between the start and end frames. The value is always between 0 and pi radians (0 and 180 degrees).</p>
+<p>If a corresponding <a class="reference internal" href="#objcinterface_leap_hand"><em>LeapHand</em></a> object is not found in sinceFrame, or if either this frame or sinceFrame are invalid <a class="reference internal" href="Leap.Frame.html#objcinterface_leap_frame"><em>LeapFrame</em></a> objects, then the angle of rotation is zero.</p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>A positive value representing the heuristically determined rotational change of the hand between the current frame and that specified in the sinceFrame parameter. </dd>
+<dt><strong>Since 1.0</strong></dt>
+<dd></dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last">
+<li><tt class="first docutils literal"><span class="pre">sinceFrame</span></tt> - <p>The starting <a class="reference internal" href="Leap.Frame.html#objcinterface_leap_frame"><em>LeapFrame</em></a> for computing the relative rotation. </p>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</p>
+</div></blockquote>
+<p><span class="target" id="objcinterface_leap_hand_1a2148131ea9d5268d940a31bf299184fe"></span><div class="line-block">
+<div class="line"><div class="line"><br /></div>
+- (float) <strong>rotationAngle</strong>:(const  <a class="reference internal" href="Leap.Frame.html#objcinterface_leap_frame"><em>LeapFrame</em></a>  *) sinceFrame <strong>axis</strong>:(const  <a class="reference internal" href="Leap.Vector.html#objcinterface_leap_vector"><em>LeapVector</em></a>  *) axis </div>
+</div>
+</p>
+<blockquote>
+<div><p>The angle of rotation around the specified axis derived from the change in orientation of this hand, and any associated fingers and tools, between the current <a class="reference internal" href="Leap.Frame.html#objcinterface_leap_frame"><em>LeapFrame</em></a> and the specified <a class="reference internal" href="Leap.Frame.html#objcinterface_leap_frame"><em>LeapFrame</em></a>. </p>
+<p><p>The returned angle is expressed in radians measured clockwise around the rotation axis (using the right-hand rule) between the start and end frames. The value is always between -pi and pi radians (-180 and 180 degrees).</p>
+<p>If a corresponding <a class="reference internal" href="#objcinterface_leap_hand"><em>LeapHand</em></a> object is not found in sinceFrame, or if either this frame or sinceFrame are invalid <a class="reference internal" href="Leap.Frame.html#objcinterface_leap_frame"><em>LeapFrame</em></a> objects, then the angle of rotation is zero.</p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>A value representing the heuristically determined rotational change of the hand between the current frame and that specified in the sinceFrame parameter around the specified axis. </dd>
+<dt><strong>Since 1.0</strong></dt>
+<dd></dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last">
+<li><tt class="first docutils literal"><span class="pre">sinceFrame</span></tt> - <p>The starting <a class="reference internal" href="Leap.Frame.html#objcinterface_leap_frame"><em>LeapFrame</em></a> for computing the relative rotation. </p>
+</li>
+<li><tt class="first docutils literal"><span class="pre">axis</span></tt> - <p>A <a class="reference internal" href="Leap.Vector.html#objcinterface_leap_vector"><em>LeapVector</em></a> representing the axis to measure rotation around. </p>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</p>
+</div></blockquote>
+<p><span class="target" id="objcinterface_leap_hand_1af30685de63d73da5a119082d7fdf3935"></span><div class="line-block">
+<div class="line"><div class="line"><br /></div>
+- (<a class="reference internal" href="Leap.Vector.html#objcinterface_leap_vector"><em>LeapVector</em></a>  *) <strong>rotationAxis</strong>:(const  <a class="reference internal" href="Leap.Frame.html#objcinterface_leap_frame"><em>LeapFrame</em></a>  *) sinceFrame </div>
+</div>
+</p>
+<blockquote>
+<div><p>The axis of rotation derived from the change in orientation of this hand, and any associated fingers and tools, between the current <a class="reference internal" href="Leap.Frame.html#objcinterface_leap_frame"><em>LeapFrame</em></a> and the specified <a class="reference internal" href="Leap.Frame.html#objcinterface_leap_frame"><em>LeapFrame</em></a>. </p>
+<p><p>The returned direction vector is normalized.</p>
+<p>If a corresponding <a class="reference internal" href="#objcinterface_leap_hand"><em>LeapHand</em></a> object is not found in sinceFrame, or if either this frame or sinceFrame are invalid <a class="reference internal" href="Leap.Frame.html#objcinterface_leap_frame"><em>LeapFrame</em></a> objects, then this method returns a zero vector.</p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>A <a class="reference internal" href="Leap.Vector.html#objcinterface_leap_vector"><em>LeapVector</em></a> containing the normalized direction vector representing the heuristically determined axis of rotational change of the hand between the current frame and that specified in the sinceFrame parameter. </dd>
+<dt><strong>Since 1.0</strong></dt>
+<dd></dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last">
+<li><tt class="first docutils literal"><span class="pre">sinceFrame</span></tt> - <p>The starting <a class="reference internal" href="Leap.Frame.html#objcinterface_leap_frame"><em>LeapFrame</em></a> for computing the relative rotation. </p>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</p>
+</div></blockquote>
+<p><span class="target" id="objcinterface_leap_hand_1a934111feb0c869e20dc28c16ec2694a4"></span><div class="line-block">
+<div class="line"><div class="line"><br /></div>
+- (<a class="reference internal" href="Leap.Matrix.html#objcinterface_leap_matrix"><em>LeapMatrix</em></a>  *) <strong>rotationMatrix</strong>:(const  <a class="reference internal" href="Leap.Frame.html#objcinterface_leap_frame"><em>LeapFrame</em></a>  *) sinceFrame </div>
+</div>
+</p>
+<blockquote>
+<div><p>The transform matrix expressing the rotation derived from the change in orientation of this hand, and any associated fingers and tools, between the current <a class="reference internal" href="Leap.Frame.html#objcinterface_leap_frame"><em>LeapFrame</em></a> and the specified <a class="reference internal" href="Leap.Frame.html#objcinterface_leap_frame"><em>LeapFrame</em></a>. </p>
+<p><p>If a corresponding <a class="reference internal" href="#objcinterface_leap_hand"><em>LeapHand</em></a> object is not found in sinceFrame, or if either this frame or sinceFrame are invalid <a class="reference internal" href="Leap.Frame.html#objcinterface_leap_frame"><em>LeapFrame</em></a> objects, then this method returns an identity matrix.</p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>A transformation <a class="reference internal" href="Leap.Matrix.html#objcinterface_leap_matrix"><em>LeapMatrix</em></a> representing the heuristically determined rotational change of the hand between the current frame and that specified in the sinceFrame parameter. </dd>
+<dt><strong>Since 1.0</strong></dt>
+<dd></dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last">
+<li><tt class="first docutils literal"><span class="pre">sinceFrame</span></tt> - <p>The starting <a class="reference internal" href="Leap.Frame.html#objcinterface_leap_frame"><em>LeapFrame</em></a> for computing the relative rotation. </p>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</p>
+</div></blockquote>
+<p><span class="target" id="objcinterface_leap_hand_1ae432a55ee291fe54f08b9ee21b569718"></span><div class="line-block">
+<div class="line"><div class="line"><br /></div>
+- (float) <strong>rotationProbability</strong>:(const  <a class="reference internal" href="Leap.Frame.html#objcinterface_leap_frame"><em>LeapFrame</em></a>  *) sinceFrame </div>
+</div>
+</p>
+<blockquote>
+<div><p>The estimated probability that the hand motion between the current <a class="reference internal" href="Leap.Frame.html#objcinterface_leap_frame"><em>LeapFrame</em></a> and the specified <a class="reference internal" href="Leap.Frame.html#objcinterface_leap_frame"><em>LeapFrame</em></a> is intended to be a rotating motion. </p>
+<p><p>If a corresponding <a class="reference internal" href="#objcinterface_leap_hand"><em>LeapHand</em></a> object is not found in sinceFrame, or if either this frame or sinceFrame are invalid <a class="reference internal" href="Leap.Frame.html#objcinterface_leap_frame"><em>LeapFrame</em></a> objects, then this method returns zero.</p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>A value between 0 and 1 representing the estimated probability that the hand motion between the current frame and the specified frame is intended to be a rotating motion. </dd>
+<dt><strong>Since 1.0</strong></dt>
+<dd></dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last">
+<li><tt class="first docutils literal"><span class="pre">sinceFrame</span></tt> - <p>The starting <a class="reference internal" href="Leap.Frame.html#objcinterface_leap_frame"><em>LeapFrame</em></a> for computing the relative rotation. </p>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</p>
+</div></blockquote>
+<p><span class="target" id="objcinterface_leap_hand_1a951385673d102ac7a84f38bf0ebd6bc0"></span><div class="line-block">
+<div class="line"><div class="line"><br /></div>
+- (float) <strong>scaleFactor</strong>:(const  <a class="reference internal" href="Leap.Frame.html#objcinterface_leap_frame"><em>LeapFrame</em></a>  *) sinceFrame </div>
+</div>
+</p>
+<blockquote>
+<div><p>The scale factor derived from this hand&#8217;s motion between the current <a class="reference internal" href="Leap.Frame.html#objcinterface_leap_frame"><em>LeapFrame</em></a> and the specified <a class="reference internal" href="Leap.Frame.html#objcinterface_leap_frame"><em>LeapFrame</em></a>. </p>
+<p><p>The scale factor is always positive. A value of 1.0 indicates no scaling took place. Values between 0.0 and 1.0 indicate contraction and values greater than 1.0 indicate expansion.</p>
+<p>The Leap derives scaling from the relative inward or outward motion of a hand and its associated fingers and tools (independent of translation and rotation).</p>
+<p>If a corresponding <a class="reference internal" href="#objcinterface_leap_hand"><em>LeapHand</em></a> object is not found in sinceFrame, or if either this frame or sinceFrame are invalid <a class="reference internal" href="Leap.Frame.html#objcinterface_leap_frame"><em>LeapFrame</em></a> objects, then this method returns 1.0.</p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>A positive value representing the heuristically determined scaling change ratio of the hand between the current frame and that specified in the sinceFrame parameter. </dd>
+<dt><strong>Since 1.0</strong></dt>
+<dd></dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last">
+<li><tt class="first docutils literal"><span class="pre">sinceFrame</span></tt> - <p>The starting <a class="reference internal" href="Leap.Frame.html#objcinterface_leap_frame"><em>LeapFrame</em></a> for computing the relative scaling. </p>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</p>
+</div></blockquote>
+<p><span class="target" id="objcinterface_leap_hand_1ad661a74300008c4a10004f42e5f0ec82"></span><div class="line-block">
+<div class="line"><div class="line"><br /></div>
+- (float) <strong>scaleProbability</strong>:(const  <a class="reference internal" href="Leap.Frame.html#objcinterface_leap_frame"><em>LeapFrame</em></a>  *) sinceFrame </div>
+</div>
+</p>
+<blockquote>
+<div><p>The estimated probability that the hand motion between the current <a class="reference internal" href="Leap.Frame.html#objcinterface_leap_frame"><em>LeapFrame</em></a> and the specified <a class="reference internal" href="Leap.Frame.html#objcinterface_leap_frame"><em>LeapFrame</em></a> is intended to be a scaling motion. </p>
+<p><p>If a corresponding <a class="reference internal" href="#objcinterface_leap_hand"><em>LeapHand</em></a> object is not found in sinceFrame, or if either this frame or sinceFrame are invalid <a class="reference internal" href="Leap.Frame.html#objcinterface_leap_frame"><em>LeapFrame</em></a> objects, then this method returns zero.</p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>A value between 0 and 1 representing the estimated probability that the hand motion between the current frame and the specified frame is intended to be a scaling motion. </dd>
+<dt><strong>Since 1.0</strong></dt>
+<dd></dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last">
+<li><tt class="first docutils literal"><span class="pre">sinceFrame</span></tt> - <p>The starting <a class="reference internal" href="Leap.Frame.html#objcinterface_leap_frame"><em>LeapFrame</em></a> for computing the relative scaling. </p>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</p>
+</div></blockquote>
+<p><span class="target" id="objcinterface_leap_hand_1a4be98a5c886136a3fe68fb56391c8f7f"></span><div class="line-block">
+<div class="line"><div class="line"><br /></div>
+- (<a class="reference internal" href="Leap.Vector.html#objcinterface_leap_vector"><em>LeapVector</em></a>  *)  <strong>sphereCenter</strong></div>
+</div>
+</p>
+<blockquote>
+<div><p>The center of a sphere fit to the curvature of this hand. </p>
+<p><p>This sphere is placed roughly as if the hand were holding a ball.</p>
+<p><img alt="api/../../../images/Leap_Hand_Ball.png" src="api/../../../images/Leap_Hand_Ball.png" /></p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>The <a class="reference internal" href="Leap.Vector.html#objcinterface_leap_vector"><em>LeapVector</em></a> representing the center position of the sphere. </dd>
+<dt><strong>Since 1.0</strong></dt>
+<dd></dd>
+</dl>
+</p>
+</p>
+</div></blockquote>
+<p><span class="target" id="objcinterface_leap_hand_1aa6783674ad8d534debe4da6da52c4878"></span><div class="line-block">
+<div class="line"><div class="line"><br /></div>
+- (float)  <strong>sphereRadius</strong></div>
+</div>
+</p>
+<blockquote>
+<div><p>The radius of a sphere fit to the curvature of this hand. </p>
+<p>This sphere is placed roughly as if the hand were holding a ball. Thus the size of the sphere decreases as the fingers are curled into a fist. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>The radius of the sphere in millimeters. </dd>
+<dt><strong>Since 1.0</strong></dt>
+<dd></dd>
+</dl>
+</p>
+</div></blockquote>
+<p><span class="target" id="objcinterface_leap_hand_1a38778281b31d923d8e281facd2bf61d7"></span><div class="line-block">
+<div class="line"><div class="line"><br /></div>
+- (<a class="reference internal" href="Leap.Vector.html#objcinterface_leap_vector"><em>LeapVector</em></a>  *)  <strong>stabilizedPalmPosition</strong></div>
+</div>
+</p>
+<blockquote>
+<div><p>The stabilized tip position of this Pointable. </p>
+<p><p>Smoothing and stabilization is performed in order to make this value more suitable for interaction with 2D content.</p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>A modified tip position of this Pointable object with some additional smoothing and stabilization applied. </dd>
+<dt><strong>Since 1.0</strong></dt>
+<dd></dd>
+</dl>
+</p>
+</p>
+</div></blockquote>
+<p><span class="target" id="objcinterface_leap_hand_1a2b95e667f0c9b2de381c5cc0fd48800c"></span><div class="line-block">
+<div class="line"><div class="line"><br /></div>
+- (float)  <strong>timeVisible</strong></div>
+</div>
+</p>
+<blockquote>
+<div><p>The duration of time this Hand has been visible to the Leap Motion Controller. </p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>The duration (in seconds) that this Hand has been tracked. </dd>
+<dt><strong>Since</strong></dt>
+<dd>1.0 </dd>
+</dl>
+</p>
+</div></blockquote>
+<p><span class="target" id="objcinterface_leap_hand_1a97040cf712a9e08efb40181426a00dcc"></span><div class="line-block">
+<div class="line"><div class="line"><br /></div>
+- (<a class="reference internal" href="Leap.Tool.html#objcinterface_leap_tool"><em>LeapTool</em></a>  *) <strong>tool</strong>:(int32_t) toolId </div>
+</div>
+</p>
+<blockquote>
+<div><p>The <a class="reference internal" href="Leap.Tool.html#objcinterface_leap_tool"><em>LeapTool</em></a> object with the specified ID held by this hand. </p>
+<p><p>Use this [<a class="reference internal" href="#objcinterface_leap_hand"><em>LeapHand</em></a> tool:] function to retrieve a <a class="reference internal" href="Leap.Tool.html#objcinterface_leap_tool"><em>LeapTool</em></a> object held by this hand using an ID value obtained from a previous frame. This function always returns a <a class="reference internal" href="Leap.Tool.html#objcinterface_leap_tool"><em>LeapTool</em></a> object, but if no tool with the specified ID is present, an invalid <a class="reference internal" href="Leap.Tool.html#objcinterface_leap_tool"><em>LeapTool</em></a> object is returned.</p>
+<p>Note that ID values persist across frames, but only until tracking of a particular object is lost. If tracking of a tool is lost and subsequently regained, the new <a class="reference internal" href="Leap.Tool.html#objcinterface_leap_tool"><em>LeapTool</em></a> object representing that tool may have a different ID than that representing the tool in an earlier frame.</p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>The <a class="reference internal" href="Leap.Tool.html#objcinterface_leap_tool"><em>LeapTool</em></a> object with the matching ID if one exists for this hand in this frame; otherwise, an invalid <a class="reference internal" href="Leap.Tool.html#objcinterface_leap_tool"><em>LeapTool</em></a> object is returned. </dd>
+<dt><strong>Since 1.0</strong></dt>
+<dd></dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last">
+<li><tt class="first docutils literal"><span class="pre">toolId</span></tt> - <p>The ID value of a <a class="reference internal" href="Leap.Tool.html#objcinterface_leap_tool"><em>LeapTool</em></a> object from a previous frame. </p>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</p>
+</div></blockquote>
+<p><span class="target" id="objcinterface_leap_hand_1a690c1055cf4852582d4e528e5189897b"></span><div class="line-block">
+<div class="line"><div class="line"><br /></div>
+- (NSArray *)  <strong>tools</strong></div>
+</div>
+</p>
+<blockquote>
+<div><p>The list of <a class="reference internal" href="Leap.Tool.html#objcinterface_leap_tool"><em>LeapTool</em></a> objects detected in this frame that are held by this hand, given in arbitrary order. </p>
+<p><p>The list can be empty if no tools held by this hand are detected.</p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>An NSArray containing all <a class="reference internal" href="Leap.Tool.html#objcinterface_leap_tool"><em>LeapTool</em></a> objects held by this hand. </dd>
+<dt><strong>Since 1.0</strong></dt>
+<dd></dd>
+</dl>
+</p>
+</p>
+</div></blockquote>
+<p><span class="target" id="objcinterface_leap_hand_1a27e6452430efe67847090f8248540e5f"></span><div class="line-block">
+<div class="line"><div class="line"><br /></div>
+- (<a class="reference internal" href="Leap.Vector.html#objcinterface_leap_vector"><em>LeapVector</em></a>  *) <strong>translation</strong>:(const  <a class="reference internal" href="Leap.Frame.html#objcinterface_leap_frame"><em>LeapFrame</em></a>  *) sinceFrame </div>
+</div>
+</p>
+<blockquote>
+<div><p>The change of position of this hand between the current <a class="reference internal" href="Leap.Frame.html#objcinterface_leap_frame"><em>LeapFrame</em></a> and the specified <a class="reference internal" href="Leap.Frame.html#objcinterface_leap_frame"><em>LeapFrame</em></a>. </p>
+<p><p>The returned translation vector provides the magnitude and direction of the movement in millimeters.</p>
+<p>If a corresponding <a class="reference internal" href="#objcinterface_leap_hand"><em>LeapHand</em></a> object is not found in sinceFrame, or if either this frame or sinceFrame are invalid <a class="reference internal" href="Leap.Frame.html#objcinterface_leap_frame"><em>LeapFrame</em></a> objects, then this method returns a zero vector.</p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>A <a class="reference internal" href="Leap.Vector.html#objcinterface_leap_vector"><em>LeapVector</em></a> representing the heuristically determined change in hand position between the current frame and that specified in the sinceFrame parameter. </dd>
+<dt><strong>Since 1.0</strong></dt>
+<dd></dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last">
+<li><tt class="first docutils literal"><span class="pre">sinceFrame</span></tt> - <p>The starting <a class="reference internal" href="Leap.Frame.html#objcinterface_leap_frame"><em>LeapFrame</em></a> for computing the translation. </p>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</p>
+</div></blockquote>
+<p><span class="target" id="objcinterface_leap_hand_1a30f54f7d192a3bc91f8d721a0e1354ac"></span><div class="line-block">
+<div class="line"><div class="line"><br /></div>
+- (float) <strong>translationProbability</strong>:(const  <a class="reference internal" href="Leap.Frame.html#objcinterface_leap_frame"><em>LeapFrame</em></a>  *) sinceFrame </div>
+</div>
+</p>
+<blockquote>
+<div><p>The estimated probability that the hand motion between the current frame and the specified <a class="reference internal" href="Leap.Frame.html#objcinterface_leap_frame"><em>LeapFrame</em></a> is intended to be a translating motion. </p>
+<p><p>If a corresponding <a class="reference internal" href="#objcinterface_leap_hand"><em>LeapHand</em></a> object is not found in sinceFrame, or if either this frame or sinceFrame are invalid <a class="reference internal" href="Leap.Frame.html#objcinterface_leap_frame"><em>LeapFrame</em></a> objects, then this method returns zero.</p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>A value between 0 and 1 representing the estimated probability that the hand motion between the current frame and the specified frame is intended to be a translating motion. </dd>
+<dt><strong>Since 1.0</strong></dt>
+<dd></dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last">
+<li><tt class="first docutils literal"><span class="pre">sinceFrame</span></tt> - <p>The starting <a class="reference internal" href="Leap.Frame.html#objcinterface_leap_frame"><em>LeapFrame</em></a> for computing the translation. </p>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</p>
+</div></blockquote>
+</div></blockquote>
+<em>Public Static Functions</em><blockquote>
+<div><p><span class="target" id="objcinterface_leap_hand_1ae885e542697ae6f9da9d527318ea6db5"></span><div class="line-block">
+<div class="line"><div class="line"><br /></div>
++ (<a class="reference internal" href="#objcinterface_leap_hand"><em>LeapHand</em></a>  *)  <strong>invalid</strong></div>
+</div>
+</p>
+<blockquote>
+<div><p>Returns an invalid <a class="reference internal" href="#objcinterface_leap_hand"><em>LeapHand</em></a> object. </p>
+<p><p>You can use the instance returned by this function in comparisons testing whether a given <a class="reference internal" href="#objcinterface_leap_hand"><em>LeapHand</em></a> instance is valid or invalid. (You can also use the <a class="reference internal" href="#objcinterface_leap_hand"><em>LeapHand</em></a> isValid: function.)</p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>The invalid <a class="reference internal" href="#objcinterface_leap_hand"><em>LeapHand</em></a> instance. </dd>
+<dt><strong>Since 1.0</strong></dt>
+<dd></dd>
+</dl>
+</p>
+</p>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<blockquote>
+<div></div></blockquote>
+
+
+      </div>
+      <div id="sidebar" class="col-md-3">
+        <div class="well-sidebar" data-spy="affix" data-offset-top="158">
+          <ul>
+            <li><a href="../index.html" title="Home">Objective-C Docs (v1.2)</a></li>
+          </ul><ul>
+<li class="toctree-l1"><a class="reference internal" href="../devguide/Leap_Overview.html">API Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../practices/Leap_Practices.html">Guidelines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../devguide/Leap_Guides.html">Application Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../devguide/Leap_Guides2.html">Using the API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../examples/Leap_Examples.html">Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Leap_Classes.html">API Reference</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Leap.CircleGesture.html#leapcirclegesture">LeapCircleGesture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Leap.Config.html#leapconfig">LeapConfig</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Leap.Controller.html#leapcontroller">LeapController</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Leap.Delegate.html">LeapDelegate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Leap.Device.html#leapdevice">LeapDevice</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Leap.Finger.html#leapfinger">LeapFinger</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Leap.Frame.html#leapframe">LeapFrame</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Leap.Gesture.html#leapgesture">LeapGesture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#leaphand">LeapHand</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Leap.InteractionBox.html#leapinteractionbox">LeapInteractionBox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Leap.KeyTapGesture.html#leapkeytapgesture">LeapKeyTapGesture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Leap.Listener.html#leaplistener-protocol">LeapListener Protocol</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Leap.Matrix.html#leapmatrix">LeapMatrix</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Leap.Pointable.html#leappointable">LeapPointable</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Leap.PointableList.html#leappointableorhandlist-category">LeapPointableOrHandList Category</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Leap.ScreenTapGesture.html#leapscreentapgesture">LeapScreenTapGesture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Leap.SwipeGesture.html#leapswipegesture">LeapSwipeGesture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Leap.Tool.html#leaptool">LeapTool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Leap.Vector.html#leapvector">LeapVector</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../supplements/Leap_Supplements.html">Appendices</a></li>
+</ul>
+
+
+        </div>
+      </div>
+        
+    </div>
+  </div>
+</div>
+
+<footer>
+
+  <div id="footer" class="container">
+
+      <ul class="unstyled col-md-2">
+        <h4>Downloads &amp; SDK</h4>
+          <li>
+              <a href="https://developer.leapmotion.com/downloads">Downloads</a>
+          </li>
+          <li>
+              <a href="https://developer.leapmotion.com/libraries">Community Libraries</a>
+          </li>
+      </ul>
+
+
+      <ul class="unstyled col-md-2">
+        <h4>Docs &amp; API</h4>
+          <li>
+              <a href="https://developer.leapmotion.com/getting_started">Get Started</a>
+          </li>
+          <li>
+              <a href="/documentation">Documentation</a>
+          </li>
+          <li>
+              <a href="https://developer.leapmotion.com/articles">Knowledge Base</a>
+          </li>
+          <li>
+              <a href="https://central.leapmotion.com/agreements/SdkAgreement?_r=https%3A%2F%2Fdeveloper.leapmotion.com%2F">SDK Agreement</a>
+          </li>
+      </ul>
+
+
+      <ul class="unstyled col-md-2">
+        <h4>Community</h4>
+          <li>
+              <a href="https://community.leapmotion.com/category/dev" target="_blank">Forums</a>
+          </li>
+          <li>
+              <a href="http://stackoverflow.com/questions/tagged/leap-motion" target="_blank">Stack Overflow</a>
+          </li>
+          <li>
+              <a href="https://developer.leapmotion.com/support">Support</a>
+          </li>
+          <li>
+              <a href="https://labs.leapmotion.com">Developer Blog</a>
+          </li>
+          <li>
+              <a href="https://twitter.com/LeapMotionDev" target="_blank">Twitter</a>
+          </li>
+          <li>
+              <a href="https://www.facebook.com/LeapMotion" target="_blank">Facebook</a>
+          </li>
+      </ul>
+
+
+      <ul class="unstyled col-md-2">
+        <h4>About</h4>
+          <li>
+              <a href="https://www.leapmotion.com/product" target="_blank">Leap Motion Controller</a>
+          </li>
+          <li>
+              <a href="http://www.leapmotion.com/company" target="_blank">Company Info</a>
+          </li>
+          <li>
+              <a href="https://www.leapmotion.com/careers" target="_blank">Careers</a>
+          </li>
+          <li>
+              <a href="https://www.leapmotion.com/contact" target="_blank">Contact</a>
+          </li>
+          <li>
+              <a href="http://blog.leapmotion.com" target="_blank">Blog</a>
+          </li>
+          <li>
+              <a href="https://www.leapmotion.com/legal" target="_blank">Privacy &amp; Terms</a>
+          </li>
+      </ul>
+
+
+      <ul class="unstyled col-md-2">
+        <h4>Apps</h4>
+          <li>
+              <a href="https://developer.leapmotion.com/apps/overview">Overview</a>
+          </li>
+          <li>
+              <a href="https://developer.leapmotion.com/apps/guidelines/review-guidelines">Guidelines</a>
+          </li>
+          <li>
+              <a href="https://developer.leapmotion.com/apps/airspace">About Airspace</a>
+          </li>
+          <li>
+              <a href="https://warehouse.leapmotion.com/" target="_blank">Submit Your App</a>
+          </li>
+          <li>
+              <a href="https://airspace.leapmotion.com/" target="_blank">Airspace</a>
+          </li>
+      </ul>
+
+  </div>
+  <script>
+      //Remove dev portal footer when viewing from file system
+      if(window.location.protocol == 'file:'){
+          var footer = document.getElementById("footer");
+          footer.parentNode.removeChild(footer);
+      }
+  
+  </script>
+  <div class="container">
+    <div class="copyright">
+      <span>Copyright &copy; 2012 - 2014, Leap Motion, Inc.</span>
+    </div>
+  </div>
+</footer>
+  </body>
+</html>
