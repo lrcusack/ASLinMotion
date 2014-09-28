@@ -30,5 +30,5 @@ export JAVA_HOME=/usr/lib/jvm/jdk/
 
 sudo gedit /usr/local/hadoop/etc/hadoop/core-site.xml //and then do the modifications that he asks of you from that file
 
-
+//also ignore mapred-site.xml and edit mapred.site.xml.template which is in the same directory as the one above this
 
