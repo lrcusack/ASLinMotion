@@ -1,3 +1,6 @@
+//javac -classpath leapsdk/lib/LeapJava.jar Gui.java
+}
+
 import java.awt.Dimension;
 import java.awt.Frame;
 import java.awt.event.KeyEvent;

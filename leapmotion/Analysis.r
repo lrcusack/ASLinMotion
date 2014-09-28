@@ -8,6 +8,7 @@ mynames[2] = "palmX"
 mynames[3] = "palmY"
 mynames[4] = "palmZ"
 
+names(output) = mynames
 
 while (i <65){
   
@@ -23,4 +24,11 @@ while (i <65){
     output[i3] = output[i3]-output$V7
   }
   i=i+1;
+}
+
+results = list()
+letters = factors(output$letter)
+for (i in 1:26){
+  temp = subset(output,subset = (as.numeric(output$letter)==i))
+  results[[i]] = summary(temp)
 }
