@@ -7,6 +7,7 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.SwingConstants;
 import com.leapmotion.leap.*;
+import java.lang.Math.*;
 
 public class Gui extends JFrame  {
 	
@@ -14,18 +15,22 @@ public class Gui extends JFrame  {
 	
 	public static void main (String [] args){
 		createWindow();
+      
 		
 	}
 	
 	private static void createWindow() {
+      int charRange = (int)(97 + (Math.random() * 123));
+      char ch = (char) charRange;
 		JFrame frame = new JFrame("Sign Language Learning");
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		JLabel textLabel = new JLabel("I'm a label in the window",SwingConstants.CENTER);
+		JLabel textLabel = new JLabel(ch,SwingConstants.CENTER);
 		frame.addKeyListener(new KeyListener(){
 
 			
 			public void keyTyped(KeyEvent e) {
-				com.leapmotion.leap.Frame frame = control.frame();
+				com.leapmotion.leap.Frame lmframe = control.frame();
+            checkAnswer(lmframe, ch);
 				// TODO adding frame=controllerFrame();
 				// checkAns(frame, letter);
 					//checkans should return boolean, if true, change color of border to green
