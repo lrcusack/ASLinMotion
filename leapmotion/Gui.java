@@ -25,7 +25,7 @@ public class Gui extends JFrame  {
 
 			
 			public void keyTyped(KeyEvent e) {
-				Frame frame = new controllerFrame();
+				com.leapmotion.leap.Frame frame = control.frame();
 				// TODO adding frame=controllerFrame();
 				// checkAns(frame, letter);
 					//checkans should return boolean, if true, change color of border to green
