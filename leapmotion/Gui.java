@@ -1,5 +1,5 @@
 //javac -classpath leapsdk/lib/LeapJava.jar Gui.java
-}
+
 
 import java.awt.Dimension;
 import java.awt.Frame;
@@ -27,7 +27,8 @@ public class Gui extends JFrame  {
       char ch = (char) charRange;
 		JFrame frame = new JFrame("Sign Language Learning");
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		JLabel textLabel = new JLabel(ch,SwingConstants.CENTER);
+      String st = "" + ch;
+		JLabel textLabel = new JLabel(st,SwingConstants.CENTER);
 		frame.addKeyListener(new KeyListener(){
 
 			
