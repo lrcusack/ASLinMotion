@@ -6,6 +6,7 @@ import java.lang.Math;
 import com.leapmotion.leap.*;
 import com.leapmotion.leap.Gesture.State;
 
+
 class SampleListener extends Listener {
 	Console cnsl;
 
