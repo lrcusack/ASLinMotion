@@ -228,8 +228,9 @@ public class KeyEventDemo extends JFrame
             System.out.println("widdit");
                //e.printStackTrace();
         }   
+
         
-        //System.out.println(nl.sign2String());
+        System.out.println(nl.sign2String());
 
         displayArea.append(keyString + newline);
         displayArea.setCaretPosition(displayArea.getDocument().getLength());

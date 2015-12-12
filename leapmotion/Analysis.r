@@ -2,13 +2,6 @@ i = 8;
 
 output <- read.csv("~/Code/hadoopopotomus/leapmotion/output.csv", header=FALSE)
 
-mynames = names(output)
-mynames[1] = "letter"
-mynames[2] = "palmX"
-mynames[3] = "palmY"
-mynames[4] = "palmZ"
-
-names(output) = mynames
 
 while (i <65){
   
@@ -26,9 +19,14 @@ while (i <65){
   i=i+1;
 }
 
-results = list()
-letters = factors(output$letter)
+means = vector(mode = "numeric", length = length(names(output)));
+results = subset(output,subset=(FALSE))
+letters = levels(output$letter)
+
 for (i in 1:26){
-  temp = subset(output,subset = (as.numeric(output$letter)==i))
-  results[[i]] = summary(temp)
+  temp = subset(output,subset = (as.numeric(output$V1)==i))
+  for (j in 2: length(names(output))){
+      var = paste("V",as.character(i),sep="")
+      means[j] = mean(temp[[var]])
+  }
 }
